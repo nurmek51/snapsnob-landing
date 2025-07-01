@@ -39,6 +39,15 @@
             margin-bottom: 0.25rem;
         }
     </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZ6R83BXTK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}    
+      gtag('js', new Date());
+
+      gtag('config', 'G-BZ6R83BXTK');
+    </script>
 </head>
 <body>
     <main class="swipe-container" style="height:100vh;">
@@ -58,6 +67,10 @@
                 <button class="action-btn reject" id="rejectBtn"><span class="btn-icon">✕</span><span class="btn-text">Pass</span></button>
                 <button class="action-btn super-like" id="superLikeBtn"><span class="btn-icon">⭐</span><span class="btn-text">Fav</span></button>
                 <button class="action-btn like" id="likeBtn"><span class="btn-icon">♥</span><span class="btn-text">Keep</span></button>
+            </div>
+            <div class="swipe-guide">
+                <div class="guide-icon">↔️</div>
+                <span class="guide-text">Swipe left to delete, right to keep</span>
             </div>
         </div>
         <!-- Hidden elements required by script -->

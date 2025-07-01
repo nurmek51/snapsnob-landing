@@ -6,6 +6,15 @@
     <title>SnapSnob - Photo Swipe Demo</title>
     <link rel="stylesheet" href="swipe-styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZ6R83BXTK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}    
+      gtag('js', new Date());
+
+      gtag('config', 'G-BZ6R83BXTK');
+    </script>
 </head>
 <body>
     <div class="app-container">
@@ -29,6 +38,10 @@
         <!-- Main Swipe Area -->
         <main class="swipe-container">
             <div class="swipe-area">
+                <div class="swipe-guide">
+                    <div class="guide-icon">↔️</div>
+                    <span class="guide-text">Swipe left to delete, right to keep</span>
+                </div>
                 <!-- Photo Stack -->
                 <div class="photo-stack" id="photoStack">
                     <!-- Photos will be dynamically loaded here -->

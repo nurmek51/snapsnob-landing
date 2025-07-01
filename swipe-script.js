@@ -298,7 +298,7 @@ function handleEnd(e) {
     rightIndicator.classList.remove('active');
     
     const deltaX = currentX - startX;
-    const threshold = 100;
+    const threshold = 60;
     
     if (Math.abs(deltaX) > threshold) {
         // Swipe detected

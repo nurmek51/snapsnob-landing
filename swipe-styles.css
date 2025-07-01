@@ -879,4 +879,45 @@ body {
     .final-stats {
         grid-template-columns: 1fr;
     }
+}
+
+/* Swipe Guide Overlay */
+.swipe-guide {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 1rem 1.5rem;
+    border: 2px solid var(--primary-black);
+    box-shadow: var(--shadow-brutal);
+    pointer-events: none;
+    z-index: 200;
+    animation: swipeGuideFadeOut 4s ease-in-out forwards 3s; /* show for first 3s */
+}
+
+.guide-icon {
+    font-size: 2rem;
+    animation: swipeIconMove 1.5s ease-in-out infinite;
+}
+
+.guide-text {
+    font-weight: 700;
+    color: var(--primary-black);
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+@keyframes swipeIconMove {
+    0% { transform: translateX(-15px); }
+    50% { transform: translateX(15px); }
+    100% { transform: translateX(-15px); }
+}
+
+@keyframes swipeGuideFadeOut {
+    to { opacity: 0; visibility: hidden; }
 } 

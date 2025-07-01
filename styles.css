@@ -628,13 +628,29 @@ body {
     }
     
     .hero {
-        padding: 100px 1rem 60px;
+        padding: 80px 1rem 40px;
     }
     
     .hero-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         text-align: center;
+        min-height: calc(100vh - 120px);
+    }
+    
+    .hero-text {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+    
+    .hero-visual {
+        order: 2;
+        margin-top: 2rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
     }
     
     .hero-title {
@@ -708,7 +724,7 @@ body {
 
 /* Hero Section */
 .hero {
-    padding: 90px 2rem 80px;
+    padding: 80px 1rem 40px;
     background: linear-gradient(135deg, var(--gray-50) 0%, var(--primary-white) 100%);
     overflow: hidden;
 }
@@ -720,6 +736,7 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
+    min-height: calc(100vh - 120px); /* header + bottom padding */
 }
 
 .hero-badge {
@@ -810,4 +827,24 @@ body {
 .step-number {
     font-family: var(--font-family-display);
     letter-spacing: 0.02em;
+}
+
+/* Mobile Demo Section */
+.mobile-demo {
+    display: none; /* hidden by default */
+    padding: 2rem 0 4rem;
+    background: var(--gray-50);
+}
+
+@media (max-width: 768px) {
+    .hero-visual {
+        display: none !important;
+    }
+    .mobile-demo {
+        display: flex;
+        justify-content: center;
+    }
+    .mobile-demo .phone-mockup {
+        margin: 0 auto;
+    }
 } 
