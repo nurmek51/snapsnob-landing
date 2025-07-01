@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swipe Mini</title>
+    <link rel="stylesheet" href="swipe-styles.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            background: transparent;
+            overflow: hidden;
+        }
+        /* Hide elements outside phone viewport */
+        .info-panel,
+        .header-content,
+        .progress-section {
+            display: none !important;
+        }
+        .swipe-container {
+            grid-template-columns: 1fr !important;
+            padding: 0 !important;
+            gap: 0 !important;
+        }
+        .swipe-area {
+            border: none !important;
+            box-shadow: none !important;
+            padding: 0 !important;
+            background: transparent !important;
+        }
+        .photo-stack {
+            width: 100%;
+            height: 100%;
+            margin-bottom: 1rem;
+        }
+        .action-buttons {
+            transform: scale(0.9);
+            margin-bottom: 0.25rem;
+        }
+    </style>
+</head>
+<body>
+    <main class="swipe-container" style="height:100vh;">
+        <div class="swipe-area">
+            <div class="photo-stack" id="photoStack"></div>
+            <div class="swipe-indicators">
+                <div class="indicator left">
+                    <div class="icon">✕</div>
+                    <span>Delete</span>
+                </div>
+                <div class="indicator right">
+                    <div class="icon">♥</div>
+                    <span>Keep</span>
+                </div>
+            </div>
+            <div class="action-buttons">
+                <button class="action-btn reject" id="rejectBtn"><span class="btn-icon">✕</span><span class="btn-text">Pass</span></button>
+                <button class="action-btn super-like" id="superLikeBtn"><span class="btn-icon">⭐</span><span class="btn-text">Fav</span></button>
+                <button class="action-btn like" id="likeBtn"><span class="btn-icon">♥</span><span class="btn-text">Keep</span></button>
+            </div>
+        </div>
+        <!-- Hidden elements required by script -->
+        <span class="photos-left" style="display:none;"> </span>
+        <div id="qualityFill" style="display:none;width:0;"></div>
+        <span id="qualityText" style="display:none;"></span>
+        <span id="duplicateCount" style="display:none;"></span>
+        <span id="categoryText" style="display:none;"></span>
+        <span id="dateText" style="display:none;"></span>
+        <span id="keptCount" style="display:none;">0</span>
+        <span id="deletedCount" style="display:none;">0</span>
+        <span id="favoritedCount" style="display:none;">0</span>
+    </main>
+
+    <!-- Overlays -->
+    <div class="completion-screen" id="completionScreen"></div>
+    <div class="loading-screen" id="loadingScreen"></div>
+
+    <script src="swipe-script.js"></script>
+</body>
+</html> 

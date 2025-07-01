@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SnapSnob - Photo Swipe Demo</title>
+    <link rel="stylesheet" href="swipe-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="demo-header">
+            <div class="header-content">
+                <button class="back-btn" onclick="window.location.href='index.html'">
+                    <span class="arrow">←</span>
+                    <span>Back</span>
+                </button>
+                <div class="logo">
+                    <h1>SnapSnob</h1>
+                    <span class="demo-badge">DEMO</span>
+                </div>
+                <div class="stats">
+                    <span class="photos-left">12 photos left</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Swipe Area -->
+        <main class="swipe-container">
+            <div class="swipe-area">
+                <!-- Photo Stack -->
+                <div class="photo-stack" id="photoStack">
+                    <!-- Photos will be dynamically loaded here -->
+                </div>
+
+                <!-- Swipe Indicators -->
+                <div class="swipe-indicators">
+                    <div class="indicator left">
+                        <div class="icon">✕</div>
+                        <span>Delete</span>
+                    </div>
+                    <div class="indicator right">
+                        <div class="icon">♥</div>
+                        <span>Keep</span>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <button class="action-btn reject" id="rejectBtn">
+                        <span class="btn-icon">✕</span>
+                        <span class="btn-text">Pass</span>
+                    </button>
+                    <button class="action-btn super-like" id="superLikeBtn">
+                        <span class="btn-icon">⭐</span>
+                        <span class="btn-text">Favorite</span>
+                    </button>
+                    <button class="action-btn like" id="likeBtn">
+                        <span class="btn-icon">♥</span>
+                        <span class="btn-text">Keep</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Side Info Panel -->
+            <div class="info-panel">
+                <div class="panel-content">
+                    <h3>Photo Analysis</h3>
+                    <div class="analysis-item">
+                        <span class="label">Quality:</span>
+                        <div class="quality-bar">
+                            <div class="quality-fill" id="qualityFill"></div>
+                        </div>
+                        <span class="quality-text" id="qualityText">Good</span>
+                    </div>
+                    <div class="analysis-item">
+                        <span class="label">Duplicates:</span>
+                        <span class="value" id="duplicateCount">0 found</span>
+                    </div>
+                    <div class="analysis-item">
+                        <span class="label">Category:</span>
+                        <span class="value" id="categoryText">Landscape</span>
+                    </div>
+                    <div class="analysis-item">
+                        <span class="label">Date:</span>
+                        <span class="value" id="dateText">Today</span>
+                    </div>
+                </div>
+
+                <div class="progress-section">
+                    <h4>Session Progress</h4>
+                    <div class="progress-stats">
+                        <div class="stat">
+                            <span class="stat-number" id="keptCount">0</span>
+                            <span class="stat-label">Kept</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" id="deletedCount">0</span>
+                            <span class="stat-label">Deleted</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" id="favoritedCount">0</span>
+                            <span class="stat-label">Favorited</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Completion Screen -->
+        <div class="completion-screen" id="completionScreen">
+            <div class="completion-content">
+                <div class="completion-icon">🎉</div>
+                <h2>Session Complete!</h2>
+                <p>You've organized all your photos</p>
+                <div class="final-stats">
+                    <div class="final-stat">
+                        <span class="number" id="finalKept">0</span>
+                        <span class="label">Photos Kept</span>
+                    </div>
+                    <div class="final-stat">
+                        <span class="number" id="finalDeleted">0</span>
+                        <span class="label">Photos Deleted</span>
+                    </div>
+                    <div class="final-stat">
+                        <span class="number" id="finalFavorited">0</span>
+                        <span class="label">Photos Favorited</span>
+                    </div>
+                </div>
+                <button class="restart-btn" onclick="restartDemo()">Try Again</button>
+            </div>
+        </div>
+
+        <!-- Loading Screen -->
+        <div class="loading-screen" id="loadingScreen">
+            <div class="loading-content">
+                <div class="loading-spinner"></div>
+                <h3>Loading Photos...</h3>
+                <p>Preparing your photo collection</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="swipe-script.js"></script>
+</body>
+</html> 
