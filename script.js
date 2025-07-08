@@ -65,7 +65,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     storeButtons.forEach(button => {
         button.addEventListener('click', function(e) {
-            e.preventDefault();
             
             // Create ripple effect
             const ripple = document.createElement('span');
